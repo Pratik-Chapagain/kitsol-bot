@@ -182,6 +182,10 @@ def webhook():
 def health():
     return jsonify({"status": "running", "bot": "Kancha-AI-v2"})
 
+
+
 if __name__ == '__main__':
     # Threaded mode allows multiple users to chat at once
-    app.run(debug=True, port=5000, threaded=True)
+    app.run(debug=True, port=5000,)
+
+app = app
