@@ -1,13 +1,23 @@
 {
-  "functions": {
-    "api/index.py": {
-      "runtime": "@vercel/python@4.0.0"
+  "version": 2,
+  "builds": [
+    {
+      "src": "bot.py",
+      "use": "@vercel/python"
     }
-  },
+  ],
   "routes": [
     {
+      "src": "/webhook",
+      "dest": "bot.py"
+    },
+    {
+      "src": "/health",
+      "dest": "bot.py"
+    },
+    {
       "src": "/(.*)",
-      "dest": "api/index.py"
+      "dest": "bot.py"
     }
   ]
 }
